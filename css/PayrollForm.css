@@ -29,8 +29,11 @@ body {
     letter-spacing: 0px;
     color: midnightblue;
 }
+
 .emp-payroll { color:midnightblue ;}
+
 * {box-sizing: border-box;}
+
 .form-content {
     min-height: calc(100%-80px);
     background-color: ghostwhite;
@@ -48,16 +51,15 @@ body {
     border-radius: 8px;
     opacity: 1;
 }
-
 .form-head{
-    font: normal normal bold 24px/37px Rubix;
+    font: normal normal  24px/37px Calistoga;
+    font-family: 'Calistoga', cursive;
     letter-spacing: 0px;
     color: #42515f;
     text-transform: capitalize;
     opacity: 1;
     padding-bottom: 20px;
 }
-
 .row-content{
     display: flex;
     flex-direction: row;
@@ -65,7 +67,6 @@ body {
     align-items: center;
     border: 0px solid green;
 }
-
 .label{
     min-width: 140px;
 }
@@ -74,18 +75,31 @@ label{
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
-
 .text{
     font-size: 16px;
     color: #42515f;
     opacity: 1;
-    font-family: Roboto;
+    font-family: 'Rubik', sans-serif;
 }
-
 .input{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+}
+
+.profile-radio-content{
+    display: flex;
+    flex-direction: row;
+}
+.profile-radio-content > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.profile {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
 }
