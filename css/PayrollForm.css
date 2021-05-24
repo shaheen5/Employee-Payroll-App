@@ -182,3 +182,23 @@ select{
         width: 85%;
         padding: 44px 20px;
     }
+}
+
+.button{
+    background: #B9DFFF;
+    color:cadetblue;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+}    
+.button:hover {
+    background: #016ABC;
+    color: rgb(153, 140, 140);
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+}
+
+
