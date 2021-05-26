@@ -200,3 +200,10 @@ select{
     box-shadow: 5px 5px 5px #eee;
     text-shadow:none;
 }
+
+error-output {
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}

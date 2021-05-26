@@ -28,7 +28,8 @@
                 <div class="row-content">
                     <label class="label text" for="name">Name</label>
                     <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
-                </div>
+                    <error-output class="text-error" for="text"></error-output>
+                </div> 
                 <div class="row-content">
                     <label class="label text" for="profile">Profile Image</label>
                     <div class="profile-radio-content">
@@ -121,26 +122,28 @@
                             <option value="31">31</option>
                         </select>
                         <select id="month" name="Month">
-                            <option value="Jan">January</option>
-                            <option value="Feb">February</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
                             <option value="March">March</option>
                             <option value="April">April</option>
                             <option value="May">May</option>
                             <option value="June">June</option>
                             <option value="July">July</option>
-                            <option value="Aug">August</option>
-                            <option value="Sept">September</option>
-                            <option value="Oct">October</option>
-                            <option value="Nov">November</option>
-                            <option value="Dec">December</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
                         </select>
                         <select id="year" name="Year">
+                            <option value="2021">2021</option>
                             <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                             <option value="2017">2017</option>
                             <option value="2016">2016</option>
                         </select>
+                        <error-output class="date-error" for="text"></dateError-output>
                     </div>
                 </div>
                 <div class="row-content">

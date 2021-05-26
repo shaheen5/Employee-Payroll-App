@@ -43,7 +43,20 @@ class EmployeePayrollData {
 
     get startDate() { return this._startDate; }
     set startDate(startDate) {
-        this._startDate = startDate;
+        const day = startDate.getDate();
+        const month = startDate.getMonth();
+        const year = startDate.getFullYear();
+        const currentDate = new Date();
+        if( year == currentDate.getFullYear() && day > currentDate.getDate() &&
+            month >= currentDate.getMonth()){
+                throw 'Date Exceeds current Date !' 
+            }
+        if(month >= currentDate.getMonth() && year == currentDate.getFullYear()){
+            throw 'Future Date is Entered !'
+        }
+        else{
+            this._startDate = startDate;
+        }
     }
 
     toString(){
