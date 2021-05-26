@@ -45,3 +45,48 @@ window.addEventListener('DOMContentLoaded',()=>{
         })
     });
 });
+
+//save function called on submit
+const save = ()=> {
+    try{
+        let employeePayrollData = createEmployeePayroll();
+    }catch(e){
+        return;
+    }
+}
+
+//function to populate employee object with html form data
+const createEmployeePayroll = ()=> {
+    let employeePayrollData = new EmployeePayrollData();
+    try {
+        employeePayrollData.name = getInputValueById('#name');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
+    employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+    employeePayrollData.department = getSelectedValues('[name=department]');
+    employeePayrollData.salary = getInputValueById('#salary');
+    employeePayrollData.note = getInputValueById('#notes');
+    let date = getInputValueById('#day') + " " + getInputValueById('#month')+
+               " "+getInputValueById('#year');
+    employeePayrollData.date = Date.parse(date);
+    alert(employeePayrollData.toString());
+    return employeePayrollData;
+}
+//function to get html form values of radio buttons  
+const getSelectedValues = (propertyValue)=>{
+    let allItems = document.querySelectorAll(propertyValue);
+    let selectItems = [];
+    allItems.forEach(item=>{
+        if(item.checked) selectItems.push(item.value);
+    });
+    return selectItems;
+}
+
+//function to get form values by Id
+const getInputValueById = (id=>{
+    let value = document.querySelector(id).value;
+    return value;
+});
