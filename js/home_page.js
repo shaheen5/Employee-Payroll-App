@@ -1,14 +1,25 @@
+//declare global variable for employee payroll list
+let employeePayrollList; 
 window.addEventListener('DOMContentLoaded', () => {
+    employeePayrollList = getEmployeePayrollDataFromLocalStorage();
+    document.querySelector('.emp-count').textContent = employeePayrollList.length;
     createInnerHTML();
+    localStorage.removeItem('editEmp');
 });
+
+//get Employee Data from local storage
+const getEmployeePayrollDataFromLocalStorage = () => {
+    return localStorage.getItem('EmployeePayrollList') ?
+                        JSON.parse(localStorage.getItem('EmployeePayrollList')) : [] ;
+}
 
 //Template literal ES6 feature 
 const createInnerHTML = () => {
     const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>"+
                        "<th>Salary</th><th>start Date</th><th>Actions</th>";
+    if ( employeePayrollList.length == 0 ) return;
     let innerHtml = `${headerHtml}`;
-    let employeePayrollList = createEmployeePayrollJSON();
-
+    
     for  ( const employeePayrollData of employeePayrollList){
         innerHtml = `${innerHtml}
          <tr>
@@ -21,8 +32,8 @@ const createInnerHTML = () => {
              <td>${employeePayrollData._salary}</td>
              <td>${employeePayrollData._startDate}</td>
              <td> 
-                 <img name="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                 <img name="${employeePayrollData._id}" alt="Edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
+                 <img id="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
+                 <img id="${employeePayrollData._id}" alt="Edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
              </td>
          </tr>
          `;
