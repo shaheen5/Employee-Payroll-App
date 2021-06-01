@@ -43,21 +43,13 @@ class EmployeePayrollData {
 
     get startDate() { return this._startDate; }
     set startDate(startDate) {
-        if (startDate == "Invalid Date") return;
-        const day = startDate.getDate();
-        const month = startDate.getMonth();
-        const year = startDate.getFullYear();
-        const currentDate = new Date();
-        if( year == currentDate.getFullYear() && day > currentDate.getDate() &&
-            month == currentDate.getMonth()){
-                throw 'Date Exceeds current Date !' 
-            }
-        if(month >= currentDate.getMonth() && year == currentDate.getFullYear()){
-            throw 'Future Date is Entered !'
-        }
-        else{
-            this._startDate = startDate;
-        }
+        let now = new Date();
+        if (startDate > now)
+            throw 'Start Date is a future Date!';
+        var diff = Math.abs(now.getTime()-startDate.getTime());
+        if (diff/(1000*60*60*24) > 30)
+            throw 'Start Date is beyond 30 Days!';
+        this._startDate = startDate;
     }
 
     toString(){
