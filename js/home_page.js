@@ -1,16 +1,35 @@
 //declare global variable for employee payroll list
 let employeePayrollList; 
 window.addEventListener('DOMContentLoaded', () => {
-    employeePayrollList = getEmployeePayrollDataFromLocalStorage();
-    document.querySelector('.emp-count').textContent = employeePayrollList.length;
-    createInnerHTML();
-    localStorage.removeItem('editEmp');
+    if(site_properties.use_local_storage.match("true")){
+        getEmployeePayrollDataFromLocalStorage();
+    }else getEmployeePayrollDataFromServer();
 });
 
 //get Employee Data from local storage
 const getEmployeePayrollDataFromLocalStorage = () => {
-    return localStorage.getItem('EmployeePayrollList') ?
+    employeePayrollList = localStorage.getItem('EmployeePayrollList') ?
                         JSON.parse(localStorage.getItem('EmployeePayrollList')) : [] ;
+    processEmployeePayrollDataResponse();
+}
+
+const processEmployeePayrollDataResponse = () => {
+    document.querySelector(".emp-count").textContent = employeePayrollList.length;
+    createInnerHTML();
+    localStorage.removeItem('editEmp');
+}
+//get employee data from json server
+const getEmployeePayrollDataFromServer = () => {
+    makeServiceCall("GET",site_properties.server_url,true)
+        .then(responseText => {
+            employeePayrollList = JSON.parse(responseText);
+            processEmployeePayrollDataResponse();
+        })
+        .catch(error => {
+            console.log("GET Error Status : "+JSON.stringify(error));
+            employeePayrollList=[];
+            processEmployeePayrollDataResponse();
+        });
 }
 
 //Template literal ES6 feature 
