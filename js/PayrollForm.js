@@ -203,3 +203,17 @@ const setSelectedValues = (propertyValue,value) => {
             item.checked = true;
     });
 }
+
+//create or update employee payroll with json server
+const createOrUpdateEmployeePayroll=()=>{
+    let postURL = site_properties.server_url;
+    let methodCall = "POST";
+    makeServiceCall(methodCall,postURL,true,employeePayrollObj)
+        .then(responseText => {
+            resetForm();
+            window.location.replace(site_properties.home_page);
+        })
+        .catch(error => {
+            throw error;
+        });
+}

@@ -36,6 +36,73 @@
       "_note": "",
       "_profilePic": "../assets/profile-images/Ellipse -1.png",
       "id": 4
+    },
+    {
+      "_name": "Wayne De Padua",
+      "_gender": "Male",
+      "_department": [
+        "HR",
+        "Sales",
+        "Others"
+      ],
+      "_salary": "430500",
+      "_note": "",
+      "_startDate": "2021-05-17T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "_name": "Wayne",
+      "_gender": "Male",
+      "_department": [
+        "Sales",
+        "Finance"
+      ],
+      "_salary": "389600",
+      "_note": "hi",
+      "_startDate": "2021-05-13T18:30:00.000Z",
+      "id": 6
+    },
+    {
+      "_name": "Ryan",
+      "_gender": "Male",
+      "_department": [
+        "HR"
+      ],
+      "_salary": "500000",
+      "_note": "",
+      "_startDate": "2020-12-31T18:30:00.000Z",
+      "id": 7
+    },
+    {
+      "_name": "MIYA SHAHEEN MOHAMMADHASEEB",
+      "_gender": "Female",
+      "_department": [
+        "Finance"
+      ],
+      "_salary": "500000",
+      "_note": "",
+      "_startDate": "2020-12-31T18:30:00.000Z",
+      "id": 8
+    },
+    {
+      "_name": "MIYA SHAHEEN MOHAMMADHASEEB",
+      "_department": [],
+      "_salary": "500000",
+      "_note": "",
+      "_startDate": "2020-12-31T18:30:00.000Z",
+      "id": 9
+    },
+    {
+      "_name": "MIYA SHAHEEN MOHAMMADHASEEB",
+      "_gender": "Female",
+      "_department": [
+        "Finance",
+        "Engineer"
+      ],
+      "_salary": "441900",
+      "_note": "",
+      "_startDate": "2021-05-15T18:30:00.000Z",
+      "id": 10
     }
   ]
 }
